@@ -1,27 +1,33 @@
-
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
-import ChatWidget from "@/components/ChatWidget";
-import Providers from "./Providers";
-
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Ameni AI — Websites, Chatbots & Automation for Tunisian Businesses",
-  description: "We build modern websites, AI chatbots, and smart booking systems to help restaurants, boutiques, and services grow. Based in Tunisia.",
+  title: "AMtech · Sites web, systèmes de réservation et chatbots IA en Tunisie",
+  description: "AMtech crée des sites professionnels, des systèmes de réservation en ligne, et des chatbots IA pour les entreprises en Tunisie. Travail sur mesure, prix clairs, contact direct.",
+  keywords: ["site web tunisie", "réservation en ligne", "chatbot ia", "agence digitale tunisie", "amtech"],
+  authors: [{ name: "AMtech" }],
+  creator: "AMtech",
+  metadataBase: new URL("https://amtech.tn"),
+  openGraph: {
+    title: "AMtech · Sites web & solutions digitales en Tunisie",
+    description: "Sites pros, systèmes de réservation, et chatbots IA — faits sur mesure pour votre business en Tunisie.",
+    siteName: "AMtech",
+    locale: "fr_TN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AMtech · Solutions digitales en Tunisie",
+    description: "Sites pros, systèmes de réservation, et chatbots IA — faits sur mesure pour votre business en Tunisie.",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col">
-        <Providers>
-          {children}
-          <ChatWidget />
-        </Providers>
-      </body>
+    <html lang="fr">
+      <body>{children}</body>
     </html>
   );
 }
