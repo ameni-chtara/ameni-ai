@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ChatWidget from "@/components/ChatWidget";
 
 export const metadata: Metadata = {
   title: "AMtech · Sites web, systèmes de réservation et chatbots IA en Tunisie",
@@ -27,7 +28,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body>{children}</body>
+      <body>
+        {children}
+        <ChatWidget />
+      </body>
     </html>
   );
 }
